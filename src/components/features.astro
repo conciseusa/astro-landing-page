@@ -3,52 +3,54 @@ import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
 import type { FeatureItem } from "~/types";
 
+// does not seem to work :(
+// cSpell:enable
 const features: Array<FeatureItem> = [
   {
-    title: "Bring Your Own Framework",
+    title: "Battery Control and Charging",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "mdi:handshake",
+      "Switches to battery backup on power failure, and the built-in charge controller recharges the battery upon power restoration.",
+    icon: "clarity:battery-line",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Alternate Power Source",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "mdi:feather",
+      "NanoUPS has an alternate power input that bypasses the charge controller, but is still monitored by the current sensor so solar, wind, etc. power sources can be used to extend or replace main power.",
+    icon: "mdi:solar-power",
   },
   {
-    title: "On-Demand Components",
+    title: "Plug-In Power Modules",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page. If the user never sees it, they never load it.",
-    icon: "mdi:directions-fork",
+      "NanoUPS can accept 2 P783F-Q24 DC DC converters so different DC loads can be accommodated. The enable signals are exposed on the screw cage connectors, so loads can be remotely shut down if needed.",
+    icon: "clarity:plugin-line",
   },
   {
-    title: "Broad Integration",
+    title: "Extended Battery Runtime",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any of your favorite npm packages.",
-    icon: "mdi:graph",
+      "The combination of a LiFePO4 battery, which have a deeper allowable discharge range, and direct DC power to the loads, which dramatically reduces the losses between the battery and the load, results in much longer runtimes compared to AC / SLA UPSs.",
+    icon: "mdi:clock-outline",
   },
   {
-    title: "SEO Enabled",
+    title: "Visibility Enabled",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication.",
-    icon: "mdi:search-web",
+      "The battery current and voltage is exposed on the screw cage connectors, making is possible to monitor and record the state of the battery over time.",
+    icon: "mdi:barometer",
   },
   {
-    title: "Community",
+    title: "No Lonely Components",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+      "A top priority when designing the NanoUPS circuit board is multi-sourcing components. When single-source components go out of stock or production, building new, or repairing existing, units becomes difficult or impossible.",
     icon: "mdi:account-group",
   },
 ];
 ---
 
+<!-- https://icon-sets.iconify.design/material-symbols/ -->
+
 <ContentSection title="Features" id="features">
   <Fragment slot="lead">
-    Astro comes <span class="text-primary">batteries included</span>. It takes
-    the best parts of
-    <span class="text-primary">state-of-the-art</span>
-    tools and adds its own <span class="text-primary">innovations</span>.
+    NanoUPS fits in the slot of space between a small DIN rail power supply and a 5Ah battery 
+    in a <span class="text-primary">NEMA</span> enclosure.
   </Fragment>
   <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {
@@ -63,4 +65,25 @@ const features: Array<FeatureItem> = [
       ))
     }
   </ul>
-</ContentSection>
+  
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <a
+      aria-label="NanoUPS schematic"
+      href="/public/BattBackBasicSchV2.pdf"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      target="_blank"
+    >
+      <Icon pack="carbon" name="schematics" class="h-8" />
+      <span>NanoUPS Schematic</span>
+    </a>
+    <a
+      aria-label="View test data on GitHub"
+      href="https://github.com/conciseusa/jupyter/blob/main/NanoUPS.ipynb"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      target="_blank"
+    >
+      <Icon pack="carbon" name="logo-jupyter" class="h-8" />
+      <span>View test data on GitHub</span>
+    </a>
+  </div>
+  </ContentSection>
