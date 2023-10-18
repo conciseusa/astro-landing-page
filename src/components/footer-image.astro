@@ -1,15 +1,15 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import footerImage from "~/assets/samer-khodeir-S3v1BMlG2Iw-unsplash.jpg";
 
 const widths = [450, 800, 1200];
 const sizes = "100vw";
 ---
 <!-- https://unsplash.com/photos/S3v1BMlG2Iw?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink -->
-<Picture
+<Image
   class="h-full w-full object-cover"
   src={footerImage}
   widths={widths}
   sizes={sizes}
-  alt="Close in photo of circuit board"
+  alt="Circuit board footer"
 />
