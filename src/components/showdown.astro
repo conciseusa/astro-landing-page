@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+// import type { FeatureItem } from "~/types";
+import { Image } from 'astro:assets';
+import NanoUPSShowdown from "../assets/NanoUPS-Showdown.jpg";
+
+---
+
+<!-- https://icon-sets.iconify.design/material-symbols/ -->
+
+<ContentSection title="Showdown" id="showdown">
+  <Fragment slot="lead">
+    A showdown of the NanoUPS power controller vs the Tripp-Lite ECO650LCD UPS each powering a TP-Link TL-SG1005D switch.{" "}
+    Tripp-Lite ECO650LCD ran on battery for <span class="text-primary">9.75 hours</span> (impressive).{" "}
+    NanoUPS ran on battery for <span class="text-primary">82.6 hours</span> (impressive!).{" "}
+    NanoUPS ran much longer due to the longer lifespan of a LiFePO4 battery and the
+    lower current draw due to not converting up to 120VAC and back down (in device power supply).
+  </Fragment>
+
+  <p class="max-w-4xl text-center">Showdown done with a simple data logging system built around an <span class="text-primary">Arduino Mega</span> and a <span class="text-primary">GenuLog Shield</span> that adds a RTC to timestamp readings and RRC networks on the analog inputs to scale and filter the signals. The TP-Link TL-SG1005D switch on the left is powered by the Tripp-Lite ECO650LCD UPS and the switch on the right is powered by the NanoUPS 12V output being sent to a LM317 programmed to reduce the voltage to the 9V needed by the switch. The NanoUPS is the red board above the ExpertPower&#174; EP125 LiFePO4 battery. The green boards to the right of the NanoUPS are 8V and 5V regulators to power the Arduino and a RS-232 converter that sends the data to a PC to record the data. The Arduino is running the <a class="underline" href="https://github.com/conciseusa/arduino-rtc-json-data-logger" target="_blank">data logging sketch</a> and the PC is running the <a class="underline" href="https://github.com/conciseusa/raspberry-pi-json-data-logger" target="_blank">Python serial data processor</a> and saves the data in CSV formatted files to be processed in a <a class="underline" href="https://jupyter.org/" target="_blank">Jupyter Notebook</a> for data analysis and visualization. Github renders Jupyter Notebooks natively so you can view the results without installing Jupyter at <a class="underline" href="https://github.com/conciseusa/jupyter/blob/main/NanoUPS-vs-ECO650LCD.ipynb" target="_blank">NanoUPS vs ECO650LCD</a>. Scroll to the bottom to see the graph showing the battery discharge / recharge cycle.</p>
+
+  <!-- https://github.com/natemoo-re/astro-icon to see icons, not clear which icons can be used. -->
+  <!-- class="h-full w-full bg-cover object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-20 group-focus:scale-110 group-focus:opacity-20" -->
+    <div class="grid grid-cols-1 gap-2 sm:grid-cols-1">
+    <a
+      aria-label="View test data on GitHub"
+      href="https://github.com/conciseusa/jupyter/blob/main/NanoUPS-vs-ECO650LCD.ipynb"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      target="_blank"
+    >
+      <Icon pack="carbon" name="logo-jupyter" class="h-8" />
+      <span>View showdown data on GitHub</span>
+    </a>
+    </div>
+    <Image
+      class="w-1/2 bg-cover object-cover transition-all duration-300 group-focus:opacity-20"
+      src={NanoUPSShowdown}
+      widths={[240, 540, 720]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px`}
+      alt="A description of my image."
+    />
+
+  </ContentSection>

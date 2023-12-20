@@ -6,11 +6,11 @@ const showcase = defineCollection({
     z.object({
       title: z.string().min(1),
       image: image(),
-      url: z.string().url(),
+      url: z.string().min(1),
       featured: z.number().min(1).optional(),
     }),
 });
-
+// url: z.string().url(), changed url above to min(1) string to use relative link
 export const collections = {
   showcase,
 };

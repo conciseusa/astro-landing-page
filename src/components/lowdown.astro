@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+
+---
+
+
+<ContentSection title="Lowdown" id="lowdown">
+  <Fragment slot="lead">
+    NanoUPS sounds too good to be true, is it <span class="text-primary">real</span> or a <span class="text-primary">dream</span>? Yes and yes.
+  </Fragment>
+
+  <p class="max-w-4xl text-center">If you have gotten this far, you might thinking <em>DC UPSs are great, where do I buy one?</em> Or the thought <em>this must be a scam, if it was real, all the big companies would be making DC UPS.</em> The reality is somewhere in the middle. First off, the designs, electronics in the pictures and test results are all real. Also, there are big companies making DC UPSs. One of the biggest names in UPSs, APC has a small one, search for APC CP12142LI. There are also large units for data centers. If they already exist, why did you design one? 2 reasons: none that I could find had the features or form factor I was looking for, and I thought it would be a good project to dust off some skills I had not used in some time, and learn some new ones. A challenge of DC UPSs is the output voltage and connector must be tailored to the device being powered. Therefore I wanted a plugin design that facilitated matching a linear or switch mode power module to the load. Also, I often use NEMA boxes with an 8" inside dimension so I wanted the power / charge controller to fit in space between a 2A DIN power supply and a 5AH lead acid or LiFePO4 battery.</p>
+
+  <p class="max-w-4xl text-center">As the pictures and test results show, I am confident I have meet my major goals and I have hand made a number of units for my use. I am evaluating the prospect of making some units for purchase. This could take many forms, everything from just selling the bare circuit board, to building up completely assembled and tested units. The most likely offering will be circuit boards with the surface mount components, and maybe the through hole components, populated and some instructions on how to build up the rest of the system to work in the desired application. As I get units ready for sale (main controller board, plugin modules, monitoring extensions, etc.) the items will be posted to my <a class="underline" href="https://www.tindie.com/stores/conciseusa" target="_blank">Tindie</a> store.</p>
+
+  <p class="max-w-4xl text-center">Why the web site for a product still taking form? One of the technologies I wanted to learn was the <a class="underline" href="https://astro.build" target="_blank">Astro</a> web framework. There is no substitute to building something when learning a new technology. While I am far from an Astro expert, building this site has been a great introduction to working with <span class="text-primary">Astro</span>.</p>
+
+  <p class="max-w-4xl">
+    Some of the skills / tools used and learned while designing and testing NanoUPS:
+    <ul class="max-w-4xl list-disc list-inside">
+      <li>Analog Circuit design - In the past I have worked as a hardware engineer so this was mostly just working through designs until I found the simplest one I could think of that met the minimum requirements.</li>
+      <li><a class="underline" href="https://www.kicad.org" target="_blank">KICad EDA</a> for Schematic Capture and PCB Layout.</li>
+      <li>C++ for programming the Arduino sketch - Mostly plain C written to be very careful about how it uses the limited amount of RAM on an Arduino UNO. A Mega was swapped in to get some more analog inputs.</li>
+      <li>Python to process the serial data coming out of the Arduino and recording it in a CSV file.</li>
+      <li>Jupyter Notebook for data analysis and visualization.</li>
+      <li><a class="underline" href="https://www.qcad.org" target="_blank">QCAD</a>  For drawing sheet metal layouts. I did a combination of hand drilling and drawing what I wanted and having it fabricated at places like <a class="underline" href="https://www.oshcut.com" target="_blank">oshcut</a>.</li>
+      <li>Affinity Designer and Photo for drawing logos, converting photos to transparent background, etc.</li>
+    </ul>
+  </p>
+
+  <p class="max-w-4xl text-center">And in the future I am considering having NanoUPS push status data to a NodeJS web service running in AWS to remotely monitor the status of the UPS.
+  Also I may evaluate if a higher power version is needed to run devices that require more power and larger batteries to have an extended run time.
+  But none of this happens overnight as these projects get done as I can steal a half hour here and and hour there on nights and weekends. I do have a full time job and young kids to consume most my waking hours.
+  If you are wondering who decided it was a good idea to design a UPS as a form of entertainment, my name is Walter Spurgiasz.</p>
+
+</ContentSection>
