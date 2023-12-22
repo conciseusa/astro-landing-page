@@ -12,9 +12,10 @@ import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
+const title = "NanoUPS — Compact DIN Mount DC Uninterruptible Power Supply";
 const image = new URL("social.jpg", site);
 const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+  "NanoUPS is a DIN mountable, compact DC UPS that has sockets for 2 P783 pin-out compatible power modules enabling support of a variety of devices including Arduino, Raspberry Pi, Beaglebone, small networking devices, etc.";
 ---
 
 <!doctype html>
@@ -25,16 +26,24 @@ const description =
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={generator} />
 
-    <title>NanoUPS — Compact DC Uninterruptible Power Supply</title>
+    <title>{title}</title>
     <meta name="description" content={description} />
 
-    <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <!-- social media https://neilpatel.com/blog/open-graph-meta-tags/ for more info -->
+    <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- <meta name="twitter:card" content="summary_large_image" /> was in template -->
+    <!-- todo from https://www.socialpilot.co/blog/twitter-card-validator
+    <meta name=”twitter:card” content=”summary_large_image”>
+    <meta name=”twitter:site” content=”@yourwebsite”>
+    <meta name=”twitter:creator” content=”@yourtwitterhandle”>
+    <meta name=”twitter:title” content=”your title”>
+    <meta name=”twitter:description” content=”your description.”>
+    <meta name=”twitter:image” content=”image URL">
+    -->
 
     <!-- initialize theme -->
     <script is:inline>

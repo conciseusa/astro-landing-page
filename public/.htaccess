@@ -1,0 +1,13 @@
+
+
+#Redirection code starts - https://primedigital.co/blog/redirect-http-https-entire-website/  https://dropwww.com/how
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.nanoups.com$
+RewriteRule ^/?(.*)$ http://nanoups.com/$1 [R=301,L] 
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#Redirection code Ends

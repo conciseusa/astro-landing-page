@@ -24,6 +24,11 @@ const links: Array<FooterLink> = [
     description: "Twitter",
     icon: "fa-brands:twitter",
   },
+  {
+    url: "https://www.linkedin.com/in/spurgiasz",
+    description: "Linkedin",
+    icon: "fa-brands:linkedin-in",
+  },
 ];
 ---
 
@@ -31,7 +36,7 @@ const links: Array<FooterLink> = [
   <div class="absolute inset-0 overflow-hidden opacity-40">
     <FooterBGImage />
   </div>
-  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
+  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-5">
     {
       links.map((link) => (
         <li>
