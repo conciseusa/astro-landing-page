@@ -1,8 +1,36 @@
-# Astro Landing Page
-
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+# Astro Landing Page <picture><source media="(prefers-color-scheme: dark)" srcset="https://astro.build/assets/press/astro-icon-light.png"><source media="(prefers-color-scheme: light)" srcset="https://astro.build/assets/press/astro-icon-dark.png"><img align="right" valign="center" height="79" width="63" src="https://astro.build/assets/press/astro-icon-dark.png" alt="Astro logo" /></picture>
 
 > An Astro + Tailwind CSS example/template for landing pages.
+
+<div align="center">
+
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+
+</div>
+
+## Merge upstream with Fork
+
+Notes on keeping fork up to date with upstream<br>
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-repository-for-a-fork<br>
+git remote -v # check if upstream set<br>
+git remote add upstream https://github.com/mhyfritz/astro-landing-page.git<br>
+git remote -v # confirm upstream set<br>
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork<br>
+git fetch upstream<br>
+git checkout main<br>
+git merge upstream/main # if there are conflicts, this is where the fun is<br>
+
+Git error on commit after merge - fatal: cannot do a partial commit during a merge<br>
+https://stackoverflow.com/questions/5827944/git-error-on-commit-after-merge-fatal-cannot-do-a-partial-commit-during-a-mer<br>
+git commit -i myfile.php<br>
+
+npm install<br>
+npm run dev<br>
+
+Needed more icons:
+https://www.npmjs.com/package/astro-icon -> Iconify Icons
+npm i -D @iconify-json/carbon
+
 
 ![Screenshots of Astro Landing Page](screenshots.jpg)
 

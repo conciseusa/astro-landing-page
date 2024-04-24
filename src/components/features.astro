@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
 import type { FeatureItem } from "~/types";
 
@@ -10,7 +10,7 @@ const features: Array<FeatureItem> = [
     title: "Battery Control and Charging",
     description:
       "Switches to battery backup on power failure, and the built-in charge controller recharges the battery upon power restoration.",
-    icon: "clarity:battery-line",
+    icon: "carbon:battery-full",
   },
   {
     title: "Alternate Power Source",
@@ -22,7 +22,7 @@ const features: Array<FeatureItem> = [
     title: "Plug-In Power Modules",
     description:
       "NanoUPS can accept 2 P783F-Q24 DC DC converters so different DC loads can be accommodated. The enable signals are exposed on the screw cage connectors, so loads can be remotely shut down if needed.",
-    icon: "clarity:plugin-line",
+    icon: "carbon:plug",
   },
   {
     title: "Extended Battery Runtime",
@@ -57,8 +57,8 @@ const features: Array<FeatureItem> = [
     {
       features.map(({ title, description, icon }) => (
         <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
-          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} />
+          <div class="size-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} class="size-full" />
           </div>
           <p class="text-center font-extrabold text-xl">{title}</p>
           <p class="text-center text-offset text-sm">{description}</p>
@@ -77,7 +77,7 @@ const features: Array<FeatureItem> = [
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
       target="_blank"
     >
-      <Icon pack="carbon" name="schematics" class="h-8" />
+      <Icon name="carbon:schematics" class="size-8" />
       <span>NanoUPS Schematic</span>
     </a>
     <a
@@ -86,7 +86,7 @@ const features: Array<FeatureItem> = [
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
       target="_blank"
     >
-      <Icon pack="carbon" name="logo-jupyter" class="h-8" />
+      <Icon name="carbon:logo-jupyter" class="size-8" />
       <span>View test data on GitHub</span>
     </a>
   </div>
@@ -98,7 +98,7 @@ const features: Array<FeatureItem> = [
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
       target="_blank"
     >
-      <Icon pack="carbon" name="schematics" class="h-8" />
+      <Icon name="carbon:schematics" class="size-8" />
       <span>LM317-P783 Schematic</span>
     </a>
     <a
@@ -107,7 +107,7 @@ const features: Array<FeatureItem> = [
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
       target="_blank"
     >
-      <Icon pack="carbon" name="schematics" class="h-8" />
+      <Icon name="carbon:schematics" class="size-8" />
       <span>LM2596-P783 Schematic</span>
     </a>
     <a
@@ -116,7 +116,7 @@ const features: Array<FeatureItem> = [
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
       target="_blank"
     >
-      <Icon pack="ph" name="plug" class="h-8" />
+      <Icon name="carbon:plug" class="size-8" />
       <span>P783F-S Series Module</span>
     </a>
   </div>
